@@ -11,9 +11,13 @@ app.use(express.json())
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 
+// all routes
 import projectRoutes from './routes/project.routes.js'
+import logRoutes from './routes/timeLogs.routes.js'
 
-app.use("/api/v1/project", projectRoutes)
+// routes udage
+app.use("/api/v1/project", projectRoutes);
+app.use("/api/v1/logs", logRoutes);
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is running on port ${process.env.PORT}`);   

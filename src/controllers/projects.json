@@ -5,7 +5,16 @@
     "description": "This is test description",
     "startDate": "2025-01-01",
     "endDate": "2025-01-31",
-    "createdAt": "2025-01-10T09:31:19.559Z"
+    "createdAt": "2025-01-10T09:31:19.559Z",
+    "logs": [
+      {
+        "id": 1,
+        "projectId": "1",
+        "description": "this is test desccccc",
+        "timeSpent": "2 hrs",
+        "timestamp": "2025-01-10T11:26:56.312Z"
+      }
+    ]
   },
   {
     "id": 2,
@@ -13,6 +22,37 @@
     "description": "This is test description neww",
     "startDate": "2025-01-01",
     "endDate": "2025-01-31",
-    "updatedAt": "2025-01-10T09:43:12.531Z"
+    "updatedAt": "2025-01-10T09:43:12.531Z",
+    "logs": [
+      {
+        "id": 2,
+        "projectId": "2",
+        "description": "this is test desc for proj 2",
+        "timeSpent": "1 hrs",
+        "timestamp": "2025-01-10T11:27:23.441Z"
+      },
+      {
+        "id": 3,
+        "projectId": "2",
+        "description": "this is test for proj 2",
+        "timeSpent": "3 hrs",
+        "timestamp": "2025-01-10T11:30:01.458Z"
+      },
+      {
+        "id": 4,
+        "projectId": "2",
+        "description": "this is test for proj 2",
+        "timeSpent": "3 hrs",
+        "timestamp": "2025-01-10T11:31:27.355Z"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Test Project to delete",
+    "description": "This is test description neww",
+    "startDate": "2025-01-01",
+    "endDate": "2026-01-31",
+    "createdAt": "2025-01-10T11:27:45.575Z"
   }
 ]
