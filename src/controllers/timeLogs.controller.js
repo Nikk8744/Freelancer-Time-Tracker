@@ -50,11 +50,13 @@ const logTime = (req, res) => {
     allLogs.push(newLogs);
     writeLogsFile(allLogs);
 
+
+    // adding logs in project.logs field
     // agar proiject ke andar logs nhi hai to create karega
     if (!project.logs) {
         project.logs = []
     }
-    project.logs.push(newLogs)
+    project.logs.push(newLogs.id)
     writeProjects(allProjects); // idhar it will write or save 
 
     return res.status(200).json({
@@ -69,6 +71,7 @@ const getAllLogs = (req, res) => {
         msg: "All logs retrieved successfully!!",
     });
 };
+
 const getProjectLogs = (req, res) => {
     const { projectId } = req.params;
 
@@ -77,10 +80,15 @@ const getProjectLogs = (req, res) => {
         return res.status(404).json({ msg: "No project found"})
     }
 
-    const projLogs = project.logs;
+    // const projectLogs = project.logs; // now cant use this i decided to keep only ids in project.logs array field
+
+    // this will retrive all the logs of the project by filtering through checking the project.log.id field with log.id
+    // mtlb project ke andar logs ki id ko specific log.id se match karega
+    const projLogs = allLogs.filter((log) => project.logs.includes(log.id));
+    // console.log("The project logs are: ", projLogs);
 
     return res.status(200).json({
-        projectLogs: projLogs || [],
+        projectLogs: projLogs,
         msg: "Project logs retrieved successfully!!",
     });
 };
