@@ -13,7 +13,7 @@ const readLogsFile = () => {
         // console.log(data)
         return JSON.parse(data);
     } catch (error) {
-        console.log("Error occured whilke reading Logs file", error)
+        console.log("Error occured while reading Logs file", error)
         return [];
     }
 };
@@ -97,4 +97,5 @@ export {
     logTime,
     getAllLogs,
     getProjectLogs,
+    readLogsFile
 }
