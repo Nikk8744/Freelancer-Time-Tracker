@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path'
+// import { parse } from 'json2csv';
 import { readLogsFile } from './timeLogs.controller.js';
-import { start } from 'repl';
 
 const projectsFilePath = path.resolve('src', 'controllers', 'projects.json');
 const summaryFilePath = path.resolve('src', 'controllers', 'summary.json');
@@ -90,9 +90,21 @@ const getTotalHoursForRange = (req, res) => {
         totalHours,
         msg: "Total hours for the given date range calculated successfully!!!",
     })
-}   
+};
+
+// const exportCSVPath = path.resolve('src', 'controllers', 'logsExport.csv');
+
+// const exportInCsv = (req, res) => {
+//     const logs = readLogsFile();
+//     const csv = parse(logs, {flatten:true});
+//     res.header('Content-Type', 'text/csv');
+//     res.attachment('logs.csv');
+//     res.send(csv);
+//     // fs.writeFileSync('summary.csv',)
+// }
 
 export {
     totalHoursPerPorject,
-    getTotalHoursForRange
+    getTotalHoursForRange,
+    // exportInCsv,
 }
